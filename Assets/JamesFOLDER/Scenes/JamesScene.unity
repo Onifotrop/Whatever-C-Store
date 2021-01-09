@@ -187,7 +187,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &85106448
+--- !u!1 &484759613
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,22 +195,84 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 85106449}
-  - component: {fileID: 85106450}
+  - component: {fileID: 484759614}
+  - component: {fileID: 484759615}
   m_Layer: 0
-  m_Name: shop
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &85106449
+--- !u!4 &484759614
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85106448}
+  m_GameObject: {fileID: 484759613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 360.7691, y: 222.99416, z: -26.8125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484759615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484759613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716eabf3f6a8f2c439b31375993b9355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player:
+    hp: 10
+    cash: 0
+    itemsImCarrying: []
+  enemies:
+  - namae: Paper Doll
+    hp: 5
+    dmg: 1
+    dp: -4
+    sp: 2
+    AoF: 2
+    AoAOE: 1
+  - namae: Walking Dead
+    hp: 10
+    dmg: 1
+    dp: 2
+    sp: -2
+    AoF: 1
+    AoAOE: 1
+--- !u!1 &496093460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 496093461}
+  - component: {fileID: 496093462}
+  m_Layer: 0
+  m_Name: CombatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &496093461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496093460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -218,18 +280,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &85106450
+--- !u!114 &496093462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85106448}
+  m_GameObject: {fileID: 496093460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6c04d0c733244b4b9ea30bf5e62a887, type: 3}
+  m_Script: {fileID: 11500000, guid: 7419964f4bd0f0e4d8a7aeaa2a39f833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player:
+    hp: 0
+    cash: 0
+    itemsImCarrying: []
+  enemy:
+    namae: 
+    hp: 0
+    dmg: 0
+    dp: 0
+    sp: 0
+    AoF: 0
+    AoAOE: 0
+  combatText: {fileID: 1461161910}
+  bluntFactor: 1
+  sharpFactor: 1
+  fireFactor: 1
+  aoeFactor: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,10 +440,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -424,7 +503,7 @@ GameObject:
   - component: {fileID: 1461161911}
   - component: {fileID: 1461161910}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Combat Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1009.1, y: -449.5}
+  m_AnchoredPosition: {x: -636, y: 392}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1461161910
